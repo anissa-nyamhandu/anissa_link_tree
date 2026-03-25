@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-green: #143700;
+  --lime: #b7f000;
+  --text-dark: #143700;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  /* FIX 1: Body is now dark green. The lime block at the bottom will disappear! */
+  background: var(--dark-green); 
+  color: var(--lime);
+  scroll-behavior: smooth; 
+}
+
+main {
+  width: 100%;
+}
+
+/* =========================================
+   BASE LAYOUT (Mobile First)
+   ========================================= */
+
+/* SECTION 1 */
+#section-1 {
+  background: var(--dark-green);
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+}
+
+#section-1 h1 {
+  font-family: 'Abril Fatface', serif;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  color: var(--lime);
+  margin-bottom: 2rem;
+}
+
+.profile-pic {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+#section-1 p {
+  width: 100%; 
+  max-width: 450px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--lime);
+  font-weight: 400;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.social-media-icons,
+.social-media-icons2 {
+  width: 56px;
+  height: 56px;
+  background: var(--lime);
+  color: var(--dark-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-media-icons:hover,
+.social-media-icons2:hover {
+  transform: scale(1.08);
+  opacity: 0.92;
+}
+
+/* SECTION 2 */
+#section-2 {
+  background: var(--lime);
+  /* FIX 2: Side padding reduced to 0.5rem to let buttons stretch wider */
+  padding: 3rem 0.5rem 2.5rem; 
+}
+
+.portfolio-image {
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.button {
+  width: 100%;
+  max-width: 600px;
+  min-height: 70px;
+  background: var(--dark-green);
+  color: var(--lime);
+  text-decoration: none;
+  border-radius: 0 0 18px 18px;
+  margin: 0 auto 1.4rem;
+  padding: 0 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  background-color: #1a4700; 
+}
+
+.button i {
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.3rem;
+}
+
+#section-2 .button:not(.featured-button) {
+  border-radius: 18px;
+}
+
+.featured-button {
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark-green);
+  text-align: center;
+  padding: 4rem 1rem 5rem;
+}
+
+footer h2 {
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: var(--lime);
+  margin-bottom: 0.4rem;
+}
+
+.handle {
+  color: var(--lime);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   MEDIA QUERIES
+   ========================================= */
+
+/* SMALL MOBILE POLISH */
+@media (max-width: 420px) {
+  #section-1 h1 { font-size: 1.9rem; }
+  footer h2 { font-size: 2.2rem; }
+  .button { font-size: 1rem; min-height: 60px; }
+  .profile-pic { width: 140px; height: 140px; }
+}
+
+/* TABLET & DESKTOP (768px and up) */
+@media (min-width: 768px) {
+  #section-1 { padding: 5rem 2rem 3rem; }
+  #section-1 h1 { font-size: 3rem; }
+  .profile-pic { width: 200px; height: 200px; margin-bottom: 2.5rem; }
+  #section-1 p { font-size: 1.1rem; max-width: 550px; }
+  
+  #section-2 { padding: 5rem 2rem; }
+  .button { min-height: 80px; font-size: 1.25rem; max-width: 600px; }
+  .button i { font-size: 1.5rem; }
+  .portfolio-image { height: 260px; max-width: 600px; }
+
+  footer { padding: 6rem 2rem 8rem; }
+  footer h2 { font-size: 3.5rem; }
+  .handle { font-size: 1.2rem; }
+}
